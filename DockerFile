@@ -1,0 +1,8 @@
+FROM nimmis/apache-php5
+MAINTAINER anjarrh
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY index.php /var/www/html/index.php
+EXPOSE 80
+EXPOSE 443
+
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
